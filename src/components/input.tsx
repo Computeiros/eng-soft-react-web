@@ -9,7 +9,12 @@ export const TextInput = ({name, type = 'text'}: TextInputProps) => {
 
   return (
     <label className="my-1 w-full " htmlFor={name}>
-      <input className="p-2 rounded border-solid border-2 w-full focus:outline-none focus:border-green-200 transitions-colors" type={type} {...register(name)} placeholder={name} />
+      <input
+        className="p-2 rounded border-solid border-2 w-full focus:outline-none focus:border-green-400 transitions-colors"
+        type={type}
+        {...register(name, {required: true})}
+        placeholder={name}
+      />
     </label>
   )
 }
